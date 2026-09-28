@@ -1,0 +1,9 @@
+.vs/
+*.slnx
+*.suo
+*.user
+bin/
+obj/
+packages/
+*.dll
+*.pdb 
