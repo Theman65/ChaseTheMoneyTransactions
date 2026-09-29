@@ -2,91 +2,77 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" style="background-position: center top; background-image: url('pictures/download (2).jpg'); background-repeat: inherit; background-attachment: fixed;">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Payment Portal</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 147px;
+        body {
+            background-image: url('pictures/download (2).jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
-        .auto-style2 {
-            width: 357px;
+        .payment-card {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .payment-title {
+            text-align: center;
+            color: #198754;
+            margin-bottom: 25px;
         }
     </style>
 </head>
 <body>
+
     <form id="form1" runat="server">
-        <div style="text-align: center">
-            <asp:Label ID="Label1" runat="server" style="color: #00FF99; font-size: xx-large" Text="Welcome to the Payment portal:"></asp:Label>
+        <div class="payment-card">
+            <h2 class="payment-title">Welcome to the Payment Portal</h2>
+
+            <div class="mb-3">
+                <asp:Label ID="Label2" runat="server" AssociatedControlID="txtEmail" CssClass="form-label" Text="Email Address:"></asp:Label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="mb-3">
+                <asp:Label ID="Label3" runat="server" AssociatedControlID="txtCardNO" CssClass="form-label" Text="Card Number:"></asp:Label>
+                <asp:TextBox ID="txtCardNO" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="mb-3">
+                <asp:Label ID="Label4" runat="server" AssociatedControlID="txtCardName" CssClass="form-label" Text="Card Holder Name:"></asp:Label>
+                <asp:TextBox ID="txtCardName" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="mb-3">
+                <asp:Label ID="Label5" runat="server" CssClass="form-label" Text="Expiry Date:"></asp:Label>
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#dee2e6" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Width="100%" CssClass="rounded">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#198754" ForeColor="White" />
+                    <TitleStyle BackColor="#f8f9fa" BorderColor="#dee2e6" BorderWidth="1px" Font-Bold="True" Font-Size="12pt" ForeColor="#198754" />
+                    <TodayDayStyle BackColor="#e9ecef" />
+                </asp:Calendar>
+            </div>
+
+            <div class="mb-4">
+
+                <asp:Label ID="Label6" runat="server" AssociatedControlID="Txtcvv" CssClass="form-label" Text="CVV Number:"></asp:Label>
+                <asp:TextBox ID="Txtcvv" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <asp:Button ID="btncon" runat="server" Text="Confirm Payment" CssClass="btn btn-success" BackColor="#33CC33" OnClick="btncon_Click" />
+                <asp:Button ID="btncan" runat="server" Text="Cancel Payment" CssClass="btn btn-outline-secondary" BackColor="#CC0000" />
+            </div>
         </div>
-        <table style="width: 100%; height: 324px;">
-            <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label2" runat="server" style="color: #000000" Text="Email Address:"></asp:Label>
-                </td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label3" runat="server" style="color: #000000" Text="Card Number:"></asp:Label>
-                </td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtCardNO" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label4" runat="server" style="color: #000000" Text="Card holder name:"></asp:Label>
-                </td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="txtCardName" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label5" runat="server" style="color: #000000" Text="expiry date"></asp:Label>
-                </td>
-                <td class="auto-style2">
-                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="586px">
-                        <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                        <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                        <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                        <TodayDayStyle BackColor="#CCCCCC" />
-                    </asp:Calendar>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    <asp:Label ID="Label6" runat="server" style="color: #000000" Text="CVV number:"></asp:Label>
-                </td>
-                <td class="auto-style2">
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style1">
-                    <asp:Button ID="Button1" runat="server" Text="confirm Payment" />
-                </td>
-                <td class="auto-style2">
-                    <asp:Button ID="Button2" runat="server" Text="Cancel Payment" Width="157px" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
     </form>
 </body>
 </html>
