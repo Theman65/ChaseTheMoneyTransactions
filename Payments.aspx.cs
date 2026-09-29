@@ -87,5 +87,11 @@ namespace chasemoney
                 // Intentionally do nothing — this stops iText7 from closing the real stream
             }
         }
+
+        protected void btncan_Click(object sender, EventArgs e)
+        {
+            // when user clicks this , page will close
+            
+        }
     }
     }

@@ -70,7 +70,7 @@
 
             <div class="d-flex justify-content-between">
                 <asp:Button ID="btncon" runat="server" Text="Confirm Payment" CssClass="btn btn-success" BackColor="#33CC33" OnClick="btncon_Click" />
-                <asp:Button ID="btncan" runat="server" Text="Cancel Payment" CssClass="btn btn-outline-secondary" BackColor="#CC0000" />
+                <asp:Button ID="btncan" runat="server" Text="Cancel Payment" CssClass="btn btn-outline-secondary" BackColor="#CC0000" OnClick="btncan_Click" />
             </div>
         </div>
     </form>
